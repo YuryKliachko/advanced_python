@@ -4,7 +4,7 @@ import time
 
 
 def print_using_lock(nums, lock):
-    """ Each threads acquires lock and prints the next number from its range"""
+    """Each threads acquires lock and prints the next number from its range"""
     try:
         while True:
             lock.acquire()

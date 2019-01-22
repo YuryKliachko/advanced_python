@@ -4,7 +4,7 @@ from threading import Thread, Condition
 
 
 def print_number(condition_var, numbers, limit):
-    """ Print a number from a range and wait until a signal received from another thread """
+    """Print a number from a range and wait until a signal received from another thread"""
     with condition_var:
         for i in numbers:
             print(i)
