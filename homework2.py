@@ -3,7 +3,7 @@ import sys
 
 
 def recursive(arg):
-    """ Get a recursion limit and increase it to cause a sagfault """
+    """Get a recursion limit and increase it to cause a sagfault"""
     print(arg)
     sys.setrecursionlimit(sys.getrecursionlimit() + 1)
     recursive(arg + 1)
