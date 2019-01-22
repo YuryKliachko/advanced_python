@@ -1,5 +1,5 @@
 """ Multithreading example using lock """
-from threading import Thread, Lock
+import threading
 import time
 
 
@@ -18,9 +18,11 @@ def print_using_lock(nums, lock):
 
 if __name__ == '__main__':
 
-    _lock = Lock()
-    thread_1 = Thread(target=print_using_lock, args=(iter(range(0, 101, 2)), _lock, ))
-    thread_2 = Thread(target=print_using_lock, args=(iter(range(1, 100, 2)), _lock, ))
+    _lock = threading.Lock()
+    thread_1 = threading.Thread(target=print_using_lock,
+                                args=(iter(range(0, 101, 2)), _lock, ))
+    thread_2 = threading.Thread(target=print_using_lock,
+                                args=(iter(range(1, 100, 2)), _lock, ))
     thread_1.start()
     time.sleep(0.05)
     thread_2.start()
