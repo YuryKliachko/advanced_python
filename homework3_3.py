@@ -9,8 +9,8 @@ shared_num = []
 def print_even(even_sem, odd_sem, _limit):
     """Acquire a semaphore and print an even number, then release a semaphore
 
-     for an opposite thread"""
-
+    for an opposite thread
+    """
     for i in range(0, limit + 1, 2):
         even_sem.acquire()
         print(i)
@@ -24,8 +24,8 @@ def print_even(even_sem, odd_sem, _limit):
 def print_odd(even_sem, odd_sem, _limit):
     """Acquire a semaphore and print an odd number, then release a semaphore
 
-     for an opposite thread"""
-
+    for an opposite thread
+    """
     while True:
         odd_sem.acquire()
         if not shared_num:

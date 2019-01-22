@@ -5,9 +5,8 @@ import threading
 
 def print_even(even_printed, odd_printed):
     """Print even number, set event variable for another thread and wait
-
-     until odd printer sets event again"""
-
+    until odd printer sets event again
+    """
     even_numbers = iter(range(0, 101, 2))
     try:
         while True:
@@ -22,8 +21,8 @@ def print_even(even_printed, odd_printed):
 def print_odd(even_printed, odd_printed):
     """Reset an event variable for another thread, print an odd number and throw
 
-     a signal to even printer, then wait its signal"""
-
+    a signal to even printer, then wait its signal
+    """
     odd_numbers = iter(range(1, 100, 2))
     try:
         while True:
