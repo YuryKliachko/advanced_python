@@ -5,6 +5,7 @@ import threading
 
 def print_even(even_printed, odd_printed):
     """Print even number, set event variable for another thread and wait
+
     until odd printer sets event again
     """
     even_numbers = iter(range(0, 101, 2))
