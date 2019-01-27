@@ -1,9 +1,9 @@
-import asyncio
 import aiohttp
+import asyncio
 import re
-from urllib import request
-import time
 import threading
+import time
+from urllib import request
 
 SOURCE_URL = 'https://www.python.org/downloads/source/'
 
