@@ -59,13 +59,15 @@ def main():
     async_download(links)
     end = time.time()
 
-    print('Time spent on downloading files asynchronously is {}'.format(end - start))
+    print('Time spent on downloading files \
+    asynchronously is {}'.format(end - start))
 
     start = time.time()
     threads_download_files(links)
     end = time.time()
 
-    print('Time spent on downloading files using threads is {}'.format(end - start))
+    print('Time spent on downloading \
+    files using threads is {}'.format(end - start))
 
 
 if __name__ == '__main__':
