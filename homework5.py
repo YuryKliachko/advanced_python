@@ -24,7 +24,10 @@ async def async_download_one(session, url):
 
 async def async_download_files(links):
     async with aiohttp.ClientSession() as session:
-        tasks = [asyncio.ensure_future(async_download_one(session, link)) for link in links[:25]]
+        tasks = []
+        for link in links:
+            task = asyncio.ensure_future(async_download_one(session, link))
+            tasks.append(task)
         await asyncio.gather(*tasks)
 
 
