@@ -16,9 +16,9 @@ def get_list_of_urls(source):
 
 async def async_download_one(session, url):
     async with session.get(url) as response:
-        print(f"Start downloading from {url} asynchronously")
+        print("Start downloading from {} asynchronously".format(url))
         result = await response.read()
-        print(f'Downloaded from {url} asynchronously')
+        print('Downloaded from {} asynchronously'.format(url))
         return result
 
 
@@ -37,9 +37,9 @@ def async_download(links):
 
 
 def thread_download_one(link):
-    print(f'Start downloading from {link} using a thread')
+    print('Start downloading from {} using a thread'.format(link))
     request.urlretrieve(link)
-    print(f'Downloaded from {link} using a thread')
+    print('Downloaded from {} using a thread'.format(link))
 
 
 def threads_download_files(links):
@@ -59,13 +59,13 @@ def main():
     async_download(links)
     end = time.time()
 
-    print(f'Time spent on downloading files asynchronously is {end - start}')
+    print('Time spent on downloading files asynchronously is {}'.format(end - start))
 
     start = time.time()
     threads_download_files(links)
     end = time.time()
 
-    print(f'Time spent on downloading files using threads is {end - start}')
+    print('Time spent on downloading files using threads is {}'.format(end - start))
 
 
 if __name__ == '__main__':
