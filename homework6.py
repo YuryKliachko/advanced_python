@@ -2,7 +2,7 @@ import json
 from urllib import request
 
 
-class Money:
+class Money(object):
     def __init__(self, amount=0.0, currency='USD'):
         self.amount = amount
         self.currency = currency
