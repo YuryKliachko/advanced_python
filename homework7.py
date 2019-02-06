@@ -14,18 +14,18 @@ class MyMetaClass(type):
         for prop in properties.keys():
             dct[prop] = property(**properties[prop])
         return type.__new__(cls, cls_name, bases, dct)
- 
+
 
 class Example(metaclass=MyMetaClass):
     def __init__(self):
         self._x = None
-     
+
     def get_x(self):
         return self._x
 
     def set_x(self, value):
         self._x = value
-       
+
     def get_y(self):
         return 'y'
 
