@@ -11,7 +11,7 @@ with open('items.txt', 'r') as f:
         items.append(Item(name, int(weight), int(value)))
 
 load = 0
-for item in sorted(items, key=lambda x: x.weight/x.value):
+for item in sorted(items, key=lambda x: x.weight / x.value):
     if load + item.weight > CAPACITY:
         break
     print('{}: weight={}, value={}'.format(item.name, item.weight, item.value))
